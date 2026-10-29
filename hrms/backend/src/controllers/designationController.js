@@ -30,6 +30,7 @@ const handleError = (err, res) => {
 // POST /api/designations
 exports.createDesignation = async (req, res) => {
   try {
+     console.log("1. request aayi", req.body);
     const { title, description, department, level } = req.body;
 
     if (department && !(await checkDepartment(department, res))) return;
